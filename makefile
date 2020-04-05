@@ -83,6 +83,7 @@ install: $(BIND)/$(NAME)
 	@install -dZ $(DATADIR)/lang
 	@install -DZ $(RESD)/lang/* -t $(DATADIR)/lang
 	@install -DZ $(RESD)/ly.service -m 644 -t ${DESTDIR}/usr/lib/systemd/system
+	@install -DZ $(RESD)/pam.d/ly -m 644 -t ${DESTDIR}/etc/pam.d
 
 installnoconf: $(BIND)/$(NAME)
 	@echo "installing without the configuration file"
@@ -93,6 +94,7 @@ installnoconf: $(BIND)/$(NAME)
 	@install -dZ $(DATADIR)/lang
 	@install -DZ $(RESD)/lang/* -t $(DATADIR)/lang
 	@install -DZ $(RESD)/ly.service -m 644 -t ${DESTDIR}/usr/lib/systemd/system
+	@install -DZ $(RESD)/pam.d/ly -m 644 -t ${DESTDIR}/etc/pam.d
 
 uninstall:
 	@echo "uninstalling"
@@ -101,6 +103,7 @@ uninstall:
 	@rm -f ${DESTDIR}/usr/bin/ly
 	@rm -f ${DESTDIR}/usr/lib/systemd/system/ly.service
 	@rm -rf ${DESTDIR}/etc/sv/ly-runit-service
+	@rm -f ${DESTDIR}/etc/pam.d/ly
 
 clean:
 	@echo "cleaning"
