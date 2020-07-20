@@ -7,6 +7,7 @@ Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
 ## Patches added in fork
 - runit service instead of systemd one by @qub1750ul
 - it language patch by @termgod
+- made some very minor change so that it actually works.
 
 ## Dependencies
  - a C99 compiler (tested with tcc and gcc)
