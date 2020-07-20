@@ -48,7 +48,7 @@ changing the source code won't be necessary :)
 ## Cloning and Compiling
 Clone the repository
 ```
-git clone https://github.com/cylgom/ly.git
+git clone https://github.com/raaron773/ly-void.git
 ```
 
 Fetch submodules
