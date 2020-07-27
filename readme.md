@@ -1,5 +1,4 @@
 # Ly - a TUI display manager (for Void Linux)
-[![CodeFactor](https://www.codefactor.io/repository/github/cylgom/ly/badge/master)](https://www.codefactor.io/repository/github/cylgom/ly/overview/master)
 ![Ly screenshot](https://user-images.githubusercontent.com/5473047/42466218-8cb53d3c-83ae-11e8-8e53-bae3669f959c.png "Ly screenshot")
 
 Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
@@ -57,7 +56,7 @@ changing the source code won't be necessary :)
 ## Cloning and Compiling
 Clone the repository
 ```
-git clone https://github.com/raaron773/ly-void.git
+git clone https://github.com/alexanderi96/ly.git
 ```
 
 Fetch submodules
@@ -82,7 +81,9 @@ Then, install Ly and the runit service file
 sudo make install
 ```
 
-Now enable the runit service to make it spawn on startup
+Now enable the service to make it spawn on startup
+
+If  using runit:
 ```
 sudo ln -s /etc/sv/ly-runit-service /var/service/
 ```
@@ -91,6 +92,9 @@ You can disable getty-tty2
 ```
 sudo rm /var/service/agetty-tty2
 ```
+
+If using systemd:
+TODO
 
 ## Configuration
 You can find all the configuration in `/etc/ly/config.ini`.
