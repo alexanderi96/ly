@@ -1,12 +1,14 @@
-# Ly - a TUI display manager (for Void Linux)
+# Ly - a TUI display manager (also for Void Linux)
 ![Ly screenshot](https://user-images.githubusercontent.com/5473047/42466218-8cb53d3c-83ae-11e8-8e53-bae3669f959c.png "Ly screenshot")
 
 Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
 
 ## Patches added in fork
+It is a direct fork of the original ly, but includes the latest patches from @raaron773 to make it work on void linux such as:
 - runit service instead of systemd one by @qub1750ul
 - it language patch by @termgod
 - made some very minor change so that it actually works on void
+
 
 ## Errors
 - Shutdown and Reboot doesn't work. If someone would be kind enough to help me then I would really appreciate it. Thanks.
