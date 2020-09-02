@@ -14,6 +14,7 @@ Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
  - a C standard library
  - make
  - pam
+ - pam-devel
  - xcb
  - xorg
  - xorg-xauth
