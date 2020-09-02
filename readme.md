@@ -9,6 +9,9 @@ Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
 - it language patch by @termgod
 - made some very minor change so that it actually works on void
 
+## Errors
+- Shutdown and Reboot doesn't work. If someone would be kind enough to help me then I would really appreciate it. Thanks.
+
 ## Dependencies
  - a C99 compiler (tested with tcc and gcc)
  - a C standard library
