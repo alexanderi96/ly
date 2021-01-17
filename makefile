@@ -76,13 +76,17 @@ install: $(BIND)/$(NAME)
 	@install -DZ $(RESD)/config.ini -t ${DESTDIR}/etc/ly
 	@install -dZ ${DESTDIR}/etc/ly/lang
 	@install -DZ $(RESD)/lang/* -t ${DESTDIR}/etc/ly/lang
-	@install -dZ ${DESTDIR}/etc/sv/ly-runit-service
-	@install -DZ $(RESD)/ly-runit-service/* -t ${DESTDIR}/etc/sv/ly-runit-service
+	if [ -d "/usr/lib/systemd" ]; then
+		@install -DZ $(RESD)/ly.service -m 644 -t ${DESTDIR}/usr/lib/systemd/system
+	fi
+	if [ -d "/etc/sv" ]; then 
+		@install -dZ ${DESTDIR}/etc/sv/ly-runit-service
+		@install -DZ $(RESD)/ly-runit-service/* -t ${DESTDIR}/etc/sv/ly-runit-service
+	fi
 	@install -DZ $(RESD)/xsetup.sh -t $(DATADIR)
 	@install -DZ $(RESD)/wsetup.sh -t $(DATADIR)
 	@install -dZ $(DATADIR)/lang
 	@install -DZ $(RESD)/lang/* -t $(DATADIR)/lang
-	@install -DZ $(RESD)/ly.service -m 644 -t ${DESTDIR}/usr/lib/systemd/system
 	@install -DZ $(RESD)/pam.d/ly -m 644 -t ${DESTDIR}/etc/pam.d
 
 installnoconf: $(BIND)/$(NAME)
@@ -101,8 +105,8 @@ uninstall:
 	@rm -rf ${DESTDIR}/etc/ly
 	@rm -rf $(DATADIR)
 	@rm -f ${DESTDIR}/usr/bin/ly
-	@rm -f ${DESTDIR}/usr/lib/systemd/system/ly.service
-	@rm -rf ${DESTDIR}/etc/sv/ly-runit-service
+	if [ -d "/usr/lib/systemd" ]; then @rm -f ${DESTDIR}/usr/lib/systemd/system/ly.service; fi
+	if [ -d "/etc/sv" ]; then @rm -rf ${DESTDIR}/etc/sv/ly-runit-service; fi
 	@rm -f ${DESTDIR}/etc/pam.d/ly
 
 clean:

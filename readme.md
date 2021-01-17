@@ -9,6 +9,9 @@ It is a direct fork of the original ly, but includes the latest patches from @ra
 - it language patch by @termgod
 - made some very minor change so that it actually works on void
 
+and:
+- the ability to automatically detect if it is going to be installed on a systemd or runit environment
+- small change to make it run with sway
 
 ## Errors
 - Shutdown and Reboot doesn't work. If someone would be kind enough to help me then I would really appreciate it. Thanks.
