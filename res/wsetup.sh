@@ -5,6 +5,9 @@
 # This file is extracted from kde-workspace (kdm/kfrontend/genkdmconf.c)
 # Copyright (C) 2001-2005 Oswald Buddenhagen <ossi@kde.org>
 
+# prevent waylang based de or wm (such as sway) from crashing at startup
+unset DISPLAY
+
 # Note that the respective logout scripts are not sourced.
 case $SHELL in
   */bash)
