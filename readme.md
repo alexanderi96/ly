@@ -79,11 +79,11 @@ or a terminal emulator (but desktop environments won't start)
 ```
 sudo make run
 ```
-
+# If using runit
 Install Ly and the provided systemd service file
 Then, install Ly and the runit service file
 ```
-sudo make install
+sudo make installrunit
 ```
 
 Now enable the service to make it spawn on startup
@@ -98,8 +98,19 @@ You can disable getty-tty2
 sudo rm /var/service/agetty-tty2
 ```
 
-If using systemd:
-TODO
+# If using systemd
+Install Ly and the provided systemd service file
+```
+sudo make install
+```
+Enable the service
+```
+sudo systemctl enable ly.service
+```
+If you need to switch between ttys after Ly's start you also have to disable getty on Ly's tty to prevent "login" from spawning on top of it
+```
+sudo systemctl disable getty@tty2.service
+```
 
 ## Configuration
 You can find all the configuration in `/etc/ly/config.ini`.
